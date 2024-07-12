@@ -12,9 +12,23 @@ export default defineConfig({
   main: {
     plugins: [tsConfigPaths, externalizeDepsPlugin()],
     publicDir: path.resolve('resources'),
+    build: {
+      rollupOptions: {
+        output: {
+          format: 'es',
+        },
+      },
+    },
   },
   preload: {
     plugins: [tsConfigPaths, externalizeDepsPlugin()],
+    build: {
+      rollupOptions: {
+        output: {
+          format: 'es',
+        },
+      },
+    },
   },
   renderer: {
     define: {

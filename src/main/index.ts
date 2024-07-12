@@ -1,9 +1,11 @@
 import './ipc'
+import './database/db'
 
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import { createFileRoute, createURLRoute } from 'electron-router-dom'
 import { join } from 'path'
+import { fileURLToPath } from 'url'
 
 import icon from '../../resources/icon.png'
 import { IPC } from '../shared/constants/ipc'
@@ -20,7 +22,7 @@ function createWindow(): void {
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
-      preload: join(__dirname, '../preload/index.js'),
+      preload: fileURLToPath(new URL('../preload/index.mjs', import.meta.url)),
       sandbox: false,
     },
   })

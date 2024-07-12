@@ -1,6 +1,5 @@
 import { FolderSimplePlus } from '@phosphor-icons/react'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { toast } from 'sonner'
 
 import type { FetchAllSortersResponse } from '~/src/shared/types/sorter'
 
@@ -13,22 +12,18 @@ export function Sidebar() {
   const { data } = useQuery({
     queryKey: ['sorters'],
     queryFn: () => window.api.sorter.fetchAll(),
-    staleTime: Infinity,
   })
 
-  const { mutateAsync: createSorter } = useMutation({
+  const { mutate: createSorter } = useMutation({
     mutationFn: window.api.sorter.create,
-    onError: () => {
-      toast.error('Não foi possível criar pasta')
-    },
     onSuccess: ({ sorter }) => {
-      const cachedSorters = queryClient.getQueryData<FetchAllSortersResponse>([
+      const cachedData = queryClient.getQueryData<FetchAllSortersResponse>([
         'sorters',
       ])
 
-      if (cachedSorters) {
-        queryClient.setQueryData(['sorters'], {
-          sorters: [...cachedSorters?.sorters, sorter],
+      if (cachedData) {
+        queryClient.setQueryData<FetchAllSortersResponse>(['sorters'], {
+          sorters: [...cachedData.sorters, sorter],
         })
       }
     },
@@ -38,22 +33,10 @@ export function Sidebar() {
     const folderPath = await getFolderPath()
 
     if (!folderPath) {
-      toast.error('Nenhuma pasta selecionada')
       return
     }
 
-    const checkSorterExists = await window.api.sorter.checkExists({
-      source: folderPath,
-    })
-
-    if (checkSorterExists) {
-      toast.error('Essa pasta já foi adicionada')
-      return
-    }
-
-    createSorter({
-      folderPath,
-    })
+    createSorter({ folderPath })
   }
 
   return (

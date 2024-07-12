@@ -8,6 +8,7 @@
       "dom.iterable"
     ],
     "jsx": "react-jsx",
+    "module": "ES2020",
     "importHelpers": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,

@@ -1,8 +1,23 @@
-export interface GetFolderPathResponse {
-  folderPath: string
+export type Extension = string
+
+export interface Folder {
+  path: string
+  name: string
 }
 
-export interface CreateSorterRequest {
+export interface Destination {
+  id: string
+  folder: Folder
+  extensions: Extension[]
+}
+
+export interface Sorter {
+  id: string
+  source: Folder
+  destinations: Destination[]
+}
+
+export interface CreateSorterParams {
   folderPath: string
 }
 
@@ -18,79 +33,4 @@ export interface FetchAllSortersResponse {
     id: string
     source: string
   }[]
-}
-
-export interface FetchSorterResponse {
-  sorter: {
-    id: string
-    source: {
-      id: string
-      name: string
-      path: string
-    }
-    destinations: {
-      id: string
-      folder: {
-        id: string
-        name: string
-        path: string
-      }
-      extensions: {
-        name: string
-      }[]
-    }[]
-  }
-}
-
-export interface CreateDestinationRequest {
-  sorterId: string
-  folderPath: string
-}
-
-export interface CreateDestinationResponse {
-  destination: {
-    id: string
-    folder: {
-      id: string
-      name: string
-      path: string
-    }
-    extensions: {
-      name: string
-    }[]
-  }
-}
-
-export interface CreateExtensionRequest {
-  name: string
-  destinationId: string
-}
-
-export interface CreateExtensionResponse {
-  extension: {
-    name: string
-  }
-}
-
-export interface CheckExtensionRequest {
-  name: string
-  sorterId: string
-}
-
-export interface CheckExtensionResponse {
-  exists: {
-    destionationId: string
-    folder: string
-    extension: string
-  } | null
-}
-
-export interface moveExtensionRequest {
-  fromId: string
-  toId: string
-  name: string
-}
-
-export interface CheckSorterExistsRequest {
-  source: string
 }

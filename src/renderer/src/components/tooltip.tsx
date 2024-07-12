@@ -18,7 +18,7 @@ export function Tooltip({ children, title, className }: TooltipProps) {
           <RadixTooltip.Content
             side="bottom"
             className={cn(
-              'data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade select-none rounded-sm bg-stone-800 px-3 py-2 text-sm font-normal leading-none text-stone-100 will-change-[transform,opacity]',
+              'select-none rounded-sm bg-stone-800 px-3 py-2 text-sm font-normal leading-none text-stone-100 will-change-[transform,opacity] data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade',
               className,
             )}
             sideOffset={5}
