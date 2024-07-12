@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Sorter {
+  id           String        @id @default(uuid())
+  source       Folder        @relation(fields: [folderId], references: [id])
+  destinations Destination[]
+  createdAt    DateTime      @default(now()) @map("created_at")
+  folderId     String        @map("folder_id")
+
+  @@map("sorters")
+}
+
+model Folder {
+  id           String        @id @default(uuid())
+  name         String
+  path         String        @unique
+  createdAt    DateTime      @default(now()) @map("created_at")
+  destinations Destination[]
+  Sorter       Sorter[]
+
+  @@map("folders")
+}
+
+model Extension {
+  name          String        @id @unique
+  createdAt     DateTime      @default(now()) @map("created_at")
+  destination   Destination[] @relation(fields: [destinationId], references: [id])
+  destinationId String?       @map("destination_id")
+
+  @@map("extensions")
+}
+
+model Destination {
+  id         String      @id @default(uuid())
+  folder     Folder      @relation(fields: [folderId], references: [id])
+  extensions Extension[]
+  createdAt  DateTime    @default(now()) @map("created_at")
+  folderId   String      @map("folder_id")
+  sorter     Sorter?     @relation(fields: [sorterId], references: [id])
+  sorterId   String?     @map("sorter_id")
+
+  @@map("destinations")
+}
