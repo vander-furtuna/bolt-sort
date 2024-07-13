@@ -7,7 +7,7 @@ import { Routes } from './routes'
 export function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Toaster richColors />
+      <Toaster richColors theme="dark" />
       <Routes />
     </QueryClientProvider>
   )

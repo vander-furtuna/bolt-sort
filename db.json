@@ -2,10 +2,72 @@
   "sorters": [
     {
       "id": "066465f2-209d-4764-93eb-2d5148238ad1",
-      "destinations": [],
+      "destinations": [
+        {
+          "id": "482b40fe-04da-467a-87cf-ae4e5b593cfd",
+          "extensions": [
+            "svg",
+            "docx"
+          ],
+          "folder": {
+            "name": "Documents",
+            "path": "C:/Users/furtu/Documents"
+          }
+        },
+        {
+          "id": "8a47d751-5d40-4897-a81a-e4bf6111363a",
+          "extensions": [
+            "pdf"
+          ],
+          "folder": {
+            "name": "Pictures",
+            "path": "C:/Users/furtu/Pictures"
+          }
+        },
+        {
+          "id": "ca90dba8-4dd1-40d4-8e1d-2b81427f9800",
+          "extensions": [],
+          "folder": {
+            "name": "Videos",
+            "path": "C:/Users/furtu/Videos"
+          }
+        },
+        {
+          "id": "bea35bec-d22e-46e8-909b-49a7e49b1465",
+          "extensions": [],
+          "folder": {
+            "name": "UFC",
+            "path": "C:/Users/furtu/UFC"
+          }
+        }
+      ],
       "source": {
         "name": "Desktop",
         "path": "C:/Users/furtu/Desktop"
+      }
+    },
+    {
+      "id": "4b07e144-0942-4be3-948c-592be94f17b1",
+      "destinations": [],
+      "source": {
+        "name": "Documents",
+        "path": "C:/Users/furtu/Documents"
+      }
+    },
+    {
+      "id": "011a99f2-4764-4659-b8be-a4e0c80a2c8e",
+      "destinations": [],
+      "source": {
+        "name": "Pictures",
+        "path": "C:/Users/furtu/Pictures"
+      }
+    },
+    {
+      "id": "9318f521-42bb-4cbc-b80e-b5b162b38ecc",
+      "destinations": [],
+      "source": {
+        "name": "3x",
+        "path": "C:/Users/furtu/Pictures/3x"
       }
     }
   ]

@@ -1,5 +1,5 @@
 import { Plus, X } from '@phosphor-icons/react'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface ExtensionInputProps {
   onCreateExtension: (name: string) => void
@@ -18,10 +18,16 @@ export function ExtensionInput({ onCreateExtension }: ExtensionInputProps) {
     }
   }
 
+  useEffect(() => {
+    if (isAdding && spanRef.current) {
+      spanRef.current.focus()
+    }
+  }, [isAdding])
+
   return (
     <>
       {isAdding ? (
-        <div className="flex items-center gap-2 rounded-md bg-yellow-400 px-2 py-0.5">
+        <div className="flex items-center gap-2 rounded-md bg-yellow-300 px-2 py-0.5">
           <span
             ref={spanRef}
             className="flex w-fit min-w-6 max-w-fit text-sm font-bold text-stone-800 outline-none"
@@ -45,7 +51,7 @@ export function ExtensionInput({ onCreateExtension }: ExtensionInputProps) {
         </div>
       ) : (
         <button
-          className="flex w-8 items-center justify-center rounded-md bg-stone-750 px-2 py-0.5 text-sm text-yellow-400"
+          className="flex w-8 items-center justify-center rounded-md bg-stone-750 px-2 py-0.5 text-sm text-yellow-300"
           onClick={() => setIsAdding(true)}
         >
           +

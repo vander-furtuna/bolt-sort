@@ -8,11 +8,13 @@ export const IPC = {
   SORTER: {
     FETCH_ALL: 'sorter:fetch-all',
     FETCH: 'sorter:fetch',
+    GET_FOLDER_DATA: 'sorter:get-folder-data',
     CREATE: 'sorter:create',
     CHECK_EXISTS: 'sorter:check-exists',
   },
   DESTINATION: {
     CREATE: 'destination:create',
+    CHECK_EXISTS: 'destination:check-exists',
   },
   EXTENSION: {
     CREATE: 'extension:create',

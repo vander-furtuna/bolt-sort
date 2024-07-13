@@ -1,6 +1,8 @@
 import { type ElectronAPI, electronAPI } from '@electron-toolkit/preload'
 import { contextBridge } from 'electron'
 
+import { destination } from './api/destination'
+import { extension } from './api/extension'
 import { sorter } from './api/sorter'
 import { windowActions } from './api/window-actions'
 
@@ -15,6 +17,8 @@ declare global {
 const api = {
   window: windowActions,
   sorter,
+  destination,
+  extension,
 }
 
 // Use `contextBridge` APIs to expose Electron APIs to

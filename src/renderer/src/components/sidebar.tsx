@@ -1,20 +1,33 @@
-import { FolderSimplePlus } from '@phosphor-icons/react'
+import {
+  FolderSimple,
+  FolderSimplePlus,
+  SidebarSimple,
+} from '@phosphor-icons/react'
 import { useMutation, useQuery } from '@tanstack/react-query'
+import { useState } from 'react'
+import { toast } from 'sonner'
 
 import type { FetchAllSortersResponse } from '~/src/shared/types/sorter'
 
-import logo from '../assets/images/logo.svg'
+import logoIcon from '../assets/images/logo-icon.svg'
+import logoTitle from '../assets/images/logo-title.svg'
 import { queryClient } from '../lib/react-query'
 import { getFolderPath } from '../utils/get-folder-path'
 import { SorterCard } from './sorter-card'
 
 export function Sidebar() {
+  const [isOpen, setIsOpen] = useState(true)
+
   const { data } = useQuery({
     queryKey: ['sorters'],
     queryFn: () => window.api.sorter.fetchAll(),
   })
 
-  const { mutate: createSorter } = useMutation({
+  const { mutateAsync: checkSorterExists } = useMutation({
+    mutationFn: window.api.sorter.checkExists,
+  })
+
+  const { mutateAsync: createSorter } = useMutation({
     mutationFn: window.api.sorter.create,
     onSuccess: ({ sorter }) => {
       const cachedData = queryClient.getQueryData<FetchAllSortersResponse>([
@@ -33,6 +46,14 @@ export function Sidebar() {
     const folderPath = await getFolderPath()
 
     if (!folderPath) {
+      toast.warning('Nenhuma pasta selecionada!')
+      return
+    }
+
+    const exists = await checkSorterExists({ source: folderPath })
+
+    if (exists) {
+      toast.warning('Essa pasta já foi adicionada!')
       return
     }
 
@@ -40,14 +61,44 @@ export function Sidebar() {
   }
 
   return (
-    <aside className="flex h-full w-[17rem] flex-shrink-0 flex-col items-center gap-12 bg-stone-800 px-4 pb-4 pt-12">
-      <img src={logo} className="h-10" alt="Bolt Sort logo" />
+    <aside
+      className="group relative flex h-full w-20 flex-shrink-0 flex-col items-center gap-12 bg-stone-800 px-4 pb-4 pt-16 transition-all duration-300 ease-in-out data-[open=true]:w-[17rem]"
+      data-open={isOpen}
+    >
+      <button
+        className="absolute right-4 top-3"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <SidebarSimple className="size-6 text-stone-400" />
+      </button>
+
+      <div className="flex gap-3">
+        <img
+          src={logoIcon}
+          className="h-10 transition-all duration-300 ease-in-out group-data-[open=false]:size-8"
+          alt="Bolt Sort logo"
+        />
+        <img
+          src={logoTitle}
+          className="h-10 group-data-[open=false]:hidden"
+          alt="Bolt Sort logo "
+        />
+      </div>
 
       <div className="flex w-full flex-col justify-start gap-4">
-        <h2 className="text-lg font-semibold text-stone-200">Minhas pastas</h2>
+        <div className="flex gap-2 pl-3">
+          <FolderSimple className="size-6 text-stone-400" weight="bold" />
+          <h2 className="text-collapsible text-lg font-semibold text-stone-200">
+            Minhas pastas
+          </h2>
+        </div>
         <div className="flex flex-col gap-2">
           {data?.sorters.map((sorter) => (
-            <SorterCard key={sorter.id} sorter={sorter} />
+            <SorterCard
+              key={sorter.id}
+              sorter={sorter}
+              isSidebarOpen={isOpen}
+            />
           ))}
         </div>
       </div>
@@ -56,7 +107,9 @@ export function Sidebar() {
         className="mt-auto flex h-9 w-full items-center justify-between rounded-md bg-stone-750 px-3"
         onClick={handleCreateSorter}
       >
-        <span className="text-sm text-stone-300">Nova pasta</span>
+        <span className="text-collapsible text-sm text-stone-300">
+          Nova pasta
+        </span>
         <FolderSimplePlus className="size-6 text-stone-300" />
       </button>
     </aside>
