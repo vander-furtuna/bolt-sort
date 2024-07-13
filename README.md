@@ -1,34 +1,44 @@
-# bolt-sort
+<h1 align="center">
+<img width="100%" alt="Octagon Banner" src="https://github.com/user-attachments/assets/2c174569-4838-4b81-b8cf-5fb76987b67c">
+</h1>
 
-An Electron application with React and TypeScript
 
-## Recommended IDE Setup
+<h3 align="center">
+  Bolt Sort ⚡
+</h3>
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+<p align="center">Organize your files at lightning speed! 📂</p>
 
-## Project Setup
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/vander-furtuna/bolt-sort?color=%23facc15">
+  
+  <a href="https://github.com/matheralvs/todo-list/commits/main">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/vander-furtuna/bolt-sort?color=%23facc15">
+  </a>
 
-### Install
+  <a href="https://github.com/matheralvs/todo-list/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/vander-furtuna/bolt-sort?color=%23facc15">
+  </a>
+</p>
 
-```bash
-$ npm install
-```
+## ✅ About the project
 
-### Development
+- This is my first electron project.
+- It aims to make life easier for users who find their computer desktops full of messy files.
+- Bolt Sort allows you to select a source folder (like Desktop, for example) and several destination folders divided by the extensions of the files you want to go to that destination.
+- At the click of a button, bolt sort, together with node, will do the hard work for you!
 
-```bash
-$ npm run dev
-```
+## 🚀 Technologies
 
-### Build
+These were the technologies used in the development of the project:
 
-```bash
-# For windows
-$ npm run build:win
+<div align="center"> 
+  <div style="display: inline_block"><br>
+    <img align="center" alt="Electron icon" title="Electron" height="56" width="56" src="https://github.com/vander-furtuna/vander-furtuna/blob/main/vander-icons/electron.svg">
+    <img align="center" alt="React.js icon" title="React.js" height="56" width="56" src="https://github.com/vander-furtuna/vander-furtuna/blob/main/vander-icons/react.svg">
+    <img align="center" alt="NodeJS icon" title="NodeJS" height="56" width="56" src="https://github.com/vander-furtuna/vander-furtuna/blob/main/vander-icons/node.svg">
+    <img align="center" alt="TailwindCSS icon" title="TailwindCSS" height="56" width="56" src="https://github.com/vander-furtuna/vander-furtuna/blob/main/vander-icons/tailwind.svg">
+    <img align="center" alt="TypeScript Icon" title="TypeScript" height="56" width="56" src="https://github.com/vander-furtuna/vander-furtuna/blob/main/vander-icons/ts.svg">
+  </div>
+</div>
 
-# For macOS
-$ npm run build:mac
-
-# For Linux
-$ npm run build:linux
-```
