@@ -31,14 +31,11 @@ Universidade Federal do Ceará
 ## 🚀 Tecnologias
 
 Tecnologias utilizadas no desenvolvimento do site:
-![React]()
 
 <div align="center"> 
   <div style="display: inline_block"><br
-![react-logo]()
 
-  <img align="center" alt="Electron icon" title="Electron" height="56" width="56" src="https://github.com/user-attachments/assets/f8e745e3-3765-49b4-8e0b-ecedf839272a">
-  <img align="center" alt="React.js icon" title="React.js" height="56" width="56" src="https://user-images.githubusercontent.com/101757815/218615819-bd5190f0-5501-4cb2-bffc-86f0b2d2039e.svg">
+  <img align="center" alt="Electron icon" title="Electron" height="56" width="56" src="https://github.com/user-attachments/assets/8ccd62c4-9b1b-44c3-9076-ea9b5f5f685d">
   <img align="center" alt="React.js icon" title="React.js" height="56" width="56" src="https://github.com/user-attachments/assets/7d0d8ead-3ac2-4205-ba37-14949ce20439">
      <img align="center" alt="Next.js icon" title="Next.js" height="56" width="56" src="https://user-images.githubusercontent.com/101757815/218617171-46ee14bb-7a75-4068-b174-afd57d835c72.svg">
   <img align="center" alt="Styled Components Icon" title="Styled Componets" height="56" width="56" src="https://user-images.githubusercontent.com/101757815/218616075-b4b6ec67-374d-4693-8cb7-14fa343a9583.svg">
