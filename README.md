@@ -21,24 +21,24 @@
   </a>
 </p>
 
-## ✅ Sobre o projeto
+## ✅ About the project
 
-Projeto desenvolvido durante a parceria entre mim e a Octagon Engenharia
+- This is my first electron project.
+- It aims to make life easier for users who find their computer desktops full of messy files.
+- Bolt Sort allows you to select a source folder (like Desktop, for example) and several destination folders divided by the extensions of the files you want to go to that destination.
+- At the click of a button, bolt sort, together with node, will do the hard work for you!
 
-Site de divulgação da empresa junior
-Universidade Federal do Ceará
+## 🚀 Technologies
 
-## 🚀 Tecnologias
-
-Tecnologias utilizadas no desenvolvimento do site:
+These were the technologies used in the development of the project:
 
 <div align="center"> 
-  <div style="display: inline_block"><br
-
-  <img align="center" alt="Electron icon" title="Electron" height="56" width="56" src="https://github.com/user-attachments/assets/8ccd62c4-9b1b-44c3-9076-ea9b5f5f685d">
-  <img align="center" alt="React.js icon" title="React.js" height="56" width="56" src="https://github.com/user-attachments/assets/7d0d8ead-3ac2-4205-ba37-14949ce20439">
-     <img align="center" alt="Next.js icon" title="Next.js" height="56" width="56" src="https://user-images.githubusercontent.com/101757815/218617171-46ee14bb-7a75-4068-b174-afd57d835c72.svg">
-  <img align="center" alt="Styled Components Icon" title="Styled Componets" height="56" width="56" src="https://user-images.githubusercontent.com/101757815/218616075-b4b6ec67-374d-4693-8cb7-14fa343a9583.svg">
-    </div>
+  <div style="display: inline_block"><br>
+    <img align="center" alt="Electron icon" title="Electron" height="56" width="56" src="https://github.com/vander-furtuna/vander-furtuna/blob/main/vander-icons/electron.svg">
+    <img align="center" alt="React.js icon" title="React.js" height="56" width="56" src="https://github.com/vander-furtuna/vander-furtuna/blob/main/vander-icons/react.svg">
+    <img align="center" alt="NodeJS icon" title="NodeJS" height="56" width="56" src="https://github.com/vander-furtuna/vander-furtuna/blob/main/vander-icons/node.svg">
+    <img align="center" alt="TailwindCSS icon" title="TailwindCSS" height="56" width="56" src="https://github.com/vander-furtuna/vander-furtuna/blob/main/vander-icons/tailwind.svg">
+    <img align="center" alt="TypeScript Icon" title="TypeScript" height="56" width="56" src="https://github.com/vander-furtuna/vander-furtuna/blob/main/vander-icons/ts.svg">
+  </div>
 </div>
 
