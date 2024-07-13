@@ -27,7 +27,7 @@ export function ExtensionInput({ onCreateExtension }: ExtensionInputProps) {
   return (
     <>
       {isAdding ? (
-        <div className="flex items-center gap-2 rounded-md bg-yellow-300 px-2 py-0.5">
+        <div className="flex items-center gap-2 rounded-md bg-yellow-400 px-2 py-0.5">
           <span
             ref={spanRef}
             className="flex w-fit min-w-6 max-w-fit text-sm font-bold text-stone-800 outline-none"
@@ -51,7 +51,7 @@ export function ExtensionInput({ onCreateExtension }: ExtensionInputProps) {
         </div>
       ) : (
         <button
-          className="flex w-8 items-center justify-center rounded-md bg-stone-750 px-2 py-0.5 text-sm text-yellow-300"
+          className="flex w-8 items-center justify-center rounded-md bg-stone-750 px-2 py-0.5 text-sm text-yellow-400"
           onClick={() => setIsAdding(true)}
         >
           +

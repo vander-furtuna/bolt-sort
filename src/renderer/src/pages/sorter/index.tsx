@@ -13,11 +13,12 @@ import { useMutation, useQuery } from '@tanstack/react-query'
 import { useParams } from 'react-router-dom'
 import { toast } from 'sonner'
 
-import { DestinationCard } from '../components/destination-card'
-import { Tooltip } from '../components/tooltip'
-import { WindowsButtons } from '../components/windows-buttons'
-import { queryClient } from '../lib/react-query'
-import { getFolderPath } from '../utils/get-folder-path'
+import { DestinationCard } from '../../components/destination-card'
+import { Tooltip } from '../../components/tooltip'
+import { WindowsButtons } from '../../components/windows-buttons'
+import { queryClient } from '../../lib/react-query'
+import { getFolderPath } from '../../utils/get-folder-path'
+import { EmptyDestinations } from './components/empty-destinations'
 
 export function Sorter() {
   // const [subfoldersMethod, setSubfoldersMethod] = useState<'move' | 'file'>()
@@ -72,7 +73,7 @@ export function Sorter() {
     <section className="flex size-full flex-col items-center justify-center">
       <div className="flex h-12 w-full items-center justify-between border-b border-stone-700 pl-4 region-drag">
         <div className="flex items-center gap-2">
-          <FolderOpen className="size-6 text-yellow-300" weight="bold" />
+          <FolderOpen className="size-6 text-yellow-400" weight="bold" />
           <span className="text-sm text-stone-200">
             {data?.sorter.source.path && data.sorter.source.path}
           </span>
@@ -97,7 +98,7 @@ export function Sorter() {
           </Tooltip>
 
           <Tooltip title="Organizar">
-            <button className="h-fit rounded-md bg-stone-800 p-1 text-yellow-300 transition-colors hover:bg-yellow-300 hover:text-gray-800">
+            <button className="h-fit rounded-md bg-stone-800 p-1 text-yellow-400 transition-colors hover:bg-yellow-400 hover:text-gray-800">
               <Lightning size={20} weight="bold" className="text-inherit" />
             </button>
           </Tooltip>
@@ -132,25 +133,16 @@ export function Sorter() {
             </div>
           </div>
         ) : (
-          <div className="flex size-full flex-col items-center justify-center gap-3">
-            Essa pasta ainda não possui destinos {':('}
-            <button
-              className="flex items-center justify-center gap-2 rounded-md bg-yellow-300 p-2 px-3 font-semibold text-stone-800"
-              onClick={() => handleCreateDestination()}
-            >
-              <span>Novo destino</span>
-              <FolderSimplePlus size={20} weight="bold" />
-            </button>
-          </div>
+          <EmptyDestinations />
         )}
         <div className="flex h-full w-72 flex-shrink-0 flex-col gap-4 border-l border-stone-700 bg-transparent px-4 py-6">
           <h2 className="font-semibold">{data?.sorter.source.name}</h2>
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-2">
             <span className="text-sm text-stone-300">Caminho: </span>
             <div className="flex items-center gap-2 rounded-md bg-stone-800 px-3 py-2">
               <FolderOpen
                 size={20}
-                className="flex-shrink-0 text-yellow-300"
+                className="flex-shrink-0 text-yellow-400"
                 weight="bold"
               />
               <strong className="w-full overflow-hidden truncate text-sm font-normal">
@@ -163,7 +155,7 @@ export function Sorter() {
               />
             </div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-2">
             <span className="text-sm text-stone-300">Subpastas: </span>
             <div className="flex items-center gap-1 rounded-md">
               <button className="flex w-full items-center justify-center gap-1.5 rounded-md bg-stone-800 py-3">

@@ -45,6 +45,6 @@
 
 @layer utilities {
   .text-collapsible {
-    @apply group-data-[open=true]:max-w-full max-w-0 overflow-hidden transition-all duration-300 ease-in-out whitespace-nowrap;
+    @apply group-data-[open=false]:max-w-0 max-w-full overflow-hidden transition-all duration-300 ease-in-out whitespace-nowrap;
   }
 }

@@ -9,7 +9,7 @@ interface ExtensionItemProps {
 
 export function ExtensionItem({ extension, isEditable }: ExtensionItemProps) {
   return (
-    <div className="flex items-center gap-1 rounded-md bg-yellow-300 px-2 py-0.5">
+    <div className="flex items-center gap-1 rounded-md bg-yellow-400 px-2 py-0.5">
       <span className="text-sm font-bold text-stone-800">{extension}</span>
       {isEditable && (
         <button className="transparent flex h-4 w-4 items-center justify-center rounded-md">

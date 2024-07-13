@@ -13,6 +13,7 @@ import logoIcon from '../assets/images/logo-icon.svg'
 import logoTitle from '../assets/images/logo-title.svg'
 import { queryClient } from '../lib/react-query'
 import { getFolderPath } from '../utils/get-folder-path'
+import { ActionButton } from './action-button'
 import { SorterCard } from './sorter-card'
 
 export function Sidebar() {
@@ -103,15 +104,13 @@ export function Sidebar() {
         </div>
       </div>
 
-      <button
-        className="mt-auto flex h-9 w-full items-center justify-between rounded-md bg-stone-750 px-3"
+      <ActionButton
         onClick={handleCreateSorter}
+        Icon={FolderSimplePlus}
+        size="fill"
       >
-        <span className="text-collapsible text-sm text-stone-300">
-          Nova pasta
-        </span>
-        <FolderSimplePlus className="size-6 text-stone-300" />
-      </button>
+        Vincular pasta
+      </ActionButton>
     </aside>
   )
 }

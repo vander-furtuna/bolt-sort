@@ -7,7 +7,7 @@ export const ButtonLabel = forwardRef<HTMLSpanElement, ButtonLabelProps>(
     return (
       <span
         ref={ref}
-        className="text-collapsible text-sm text-stone-300"
+        className="text-collapsible text-sm text-inherit"
         {...props}
       >
         {children}

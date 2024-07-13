@@ -16,7 +16,7 @@ export function SorterCard({ sorter, isSidebarOpen }: SorterCardProps) {
     <Tooltip title={sorter.source} side="right" disabled={isSidebarOpen}>
       <NavLink
         to={`/sorter/${sorter.id}`}
-        className="group flex h-9 w-full items-center rounded-md bg-stone-750 px-3 hover:bg-stone-700 aria-[current=page]:bg-yellow-300"
+        className="group flex h-9 w-full items-center rounded-md bg-stone-750 px-3 hover:bg-stone-700 aria-[current=page]:bg-yellow-400"
       >
         <div className="flex w-full items-center justify-normal gap-2">
           <FolderSimple
